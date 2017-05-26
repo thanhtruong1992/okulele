@@ -1,4 +1,4 @@
-$(function () {
+$(document).ready(function() {
     new Swiper('.swiper-container-slider', {
         pagination: '.swiper-pagination',
         nextButton: '.swiper-button-next',
@@ -74,4 +74,70 @@ $(function () {
     $("#cssmenu").menumaker({
         format: "multitoggle"
     });
+
+    $currentSlideIndex = 0;
+
+    $("#slider-comment").on("touchstart", function(event){
+      var xClick = event.originalEvent.touches[0].pageX;
+        $(this).one("touchmove", function(event){
+            var xMove = event.originalEvent.touches[0].pageX;
+            if( Math.floor(xClick - xMove) > 10 ){
+                switchSlide('next');
+            }
+            else if( Math.floor(xClick - xMove) < -10 ){
+                switchSlide('prev');
+            }
+        });
+        $("#slider-comment").on("touchend", function(){
+                $(this).off("touchmove");
+        });
+    });
+
+    switchSlide();
+
+    /*$('.slide-image').swipe({
+        swipeLeft: function (event) {
+          switchSlide('next');
+        },
+        swipeRight: function (event) {
+          switchSlide('prev');
+        }
+    });*/
+    
 });
+
+var $currentSlideIndex;
+var $interval;
+
+function switchSlide(type) {
+
+  var $length = $('.slider .slide-image').length;
+
+  if (type == 'next') {
+    $currentSlideIndex++;
+    if ($currentSlideIndex > $length - 1) {
+      $currentSlideIndex = 0;
+    }
+  } else if (type == 'prev') {
+    $currentSlideIndex--;
+    if ($currentSlideIndex < 0) {
+      $currentSlideIndex = $length - 1;
+    }
+  }
+
+  $('.slider .slide-image')
+    .removeClass('active')
+    .eq($currentSlideIndex).addClass('active');
+
+  $('.slider .slide-intro')
+    .removeClass('active')
+    .eq($currentSlideIndex).addClass('active');
+
+  if ($interval !== undefined) {
+    clearInterval($interval);
+  }
+
+  $interval = setInterval(function () {
+    switchSlide('next');
+  }, 5000);
+}

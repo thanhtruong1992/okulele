@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -29,7 +30,7 @@
             </div>
             <div class="button">
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-menu slideInRight" id="menu-header">
                 <li class='active'>
                     <a href='#'>Trang Chủ</a>
                 </li>
@@ -108,55 +109,51 @@
             </div>
         </div>
     </section>
-    <section class="caption">
-        <div class="swiper-container swiper-container-caption">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="content-caption">
-                        <p class="hedaer">
-                            "
-                        </p>
-                        <p class="content">
-                            định vị mình là đơn vị tư vấn về thương hiệu và giải pháp cho các khuôn viên giải trí như công
-                            viên, bãi biển du lịch và trung tâm thương mại
-                        </p>
-                        <p class="author">
-                            Bui Hoang Minh
-                        </p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="content-caption">
-                        <p class="hedaer">
-                            "
-                        </p>
-                        <p class="content">
-                            định vị mình là đơn vị tư vấn về thương hiệu và giải pháp cho các khuôn viên giải trí như công
-                            viên, bãi biển du lịch và trung tâm thương mại
-                        </p>
-                        <p class="author">
-                            Bui Hoang Minh
-                        </p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="content-caption">
-                        <p class="hedaer">
-                            "
-                        </p>
-                        <p class="content">
-                            định vị mình là đơn vị tư vấn về thương hiệu và giải pháp cho các khuôn viên giải trí như công
-                            viên, bãi biển du lịch và trung tâm thương mại
-                        </p>
-                        <p class="author">
-                            Bui Hoang Minh
-                        </p>
-                    </div>
-                </div>
+    <section class="caption slider">
+        <div class="slider" id="slider-comment">
+            <div class="content-caption slide-image active">
+                <p class="hedaer">
+                    "
+                </p>
+                <p class="content">
+                    asdfafasdfasdf
+                </p>
+                <p class="author">
+                    Bui Hoang Minh
+                </p>
             </div>
-            <!-- Add Arrows -->
-            <div class="swiper-caption-button-next"></div>
-            <div class="swiper-caption--button-prev"></div>
+            <div class="content-caption slide-image">
+                <p class="hedaer">
+                    "
+                </p>
+                <p class="content">
+                    định vị mình là đơn vị tư vấn về thương hiệu và giải pháp cho các khuôn viên giải trí như công
+                    viên, bãi biển du lịch và trung tâm thương mại
+                </p>
+                <p class="author">
+                    Bui Hoang Minh
+                </p>
+            </div>
+            <div class="content-caption slide-image">
+                <p class="hedaer">
+                    "
+                </p>
+                <p class="content">
+                    sdfgsdfg
+                    định vị mình là đơn vị tư vấn về thương hiệu và giải pháp cho các khuôn viên giải trí như công
+                    viên, bãi biển du lịch và trung tâm thương mại
+                </p>
+                <p class="author">
+                    Bui Hoang Minh
+                </p>
+            </div>
+
+            <div class="button-next" onclick="switchSlide('next')">
+                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            </div>
+            <div class="button-prev" onclick="switchSlide('prev')">
+                <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+            </div>
         </div>
     </section>
     <section class="event">
