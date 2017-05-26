@@ -4,7 +4,6 @@ $(function () {
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
         paginationClickable: true,
-        spaceBetween: 0,
         centeredSlides: true,
         autoplay: false,
         autoplayDisableOnInteraction: false,
